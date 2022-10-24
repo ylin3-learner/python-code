@@ -1,0 +1,124 @@
+2022-02-22 23:32:37,071-final_student_system.py-[line:129]-INFO-學生dewei 被註冊了
+2022-02-22 23:34:35,349-final_student_system.py-[line:129]-INFO-學生dewei 被註冊了
+2022-02-22 23:34:48,579-diff.py-[line:282]-DEBUG-diff parser start
+2022-02-22 23:34:48,579-diff.py-[line:293]-DEBUG-line_lengths old: 1; new: 1
+2022-02-22 23:34:48,579-diff.py-[line:296]-DEBUG--> code[replace] old[1:1] new[1:1]
+2022-02-22 23:34:48,580-diff.py-[line:421]-DEBUG-parse_part from 1 to 1 (to 0 in part parser)
+2022-02-22 23:34:48,580-diff.py-[line:339]-DEBUG-diff parser end
+2022-02-22 23:34:49,986-diff.py-[line:282]-DEBUG-diff parser start
+2022-02-22 23:34:49,986-diff.py-[line:293]-DEBUG-line_lengths old: 1; new: 1
+2022-02-22 23:34:49,986-diff.py-[line:296]-DEBUG--> code[replace] old[1:1] new[1:1]
+2022-02-22 23:34:49,988-diff.py-[line:421]-DEBUG-parse_part from 1 to 1 (to 0 in part parser)
+2022-02-22 23:34:49,988-diff.py-[line:339]-DEBUG-diff parser end
+2022-02-22 23:34:51,277-diff.py-[line:282]-DEBUG-diff parser start
+2022-02-22 23:34:51,277-diff.py-[line:293]-DEBUG-line_lengths old: 1; new: 1
+2022-02-22 23:34:51,277-diff.py-[line:296]-DEBUG--> code[replace] old[1:1] new[1:1]
+2022-02-22 23:34:51,277-diff.py-[line:421]-DEBUG-parse_part from 1 to 1 (to 0 in part parser)
+2022-02-22 23:34:51,277-diff.py-[line:339]-DEBUG-diff parser end
+2022-02-22 23:34:57,850-interactiveshell.py-[line:113]-DEBUG-NAME 'obj' (prefix='')
+2022-02-22 23:34:57,850-interactiveshell.py-[line:113]-DEBUG-DOT '.' (prefix='')
+2022-02-22 23:34:57,850-interactiveshell.py-[line:113]-DEBUG-NAME 'deete' (prefix='')
+2022-02-22 23:34:57,851-interactiveshell.py-[line:113]-DEBUG-LPAR '(' (prefix='')
+2022-02-22 23:34:57,851-interactiveshell.py-[line:113]-DEBUG-STRING "'3'" (prefix='')
+2022-02-22 23:34:57,851-interactiveshell.py-[line:113]-DEBUG-RPAR ')' (prefix='')
+2022-02-22 23:34:57,851-interactiveshell.py-[line:113]-DEBUG-NEWLINE '\n' (prefix='')
+2022-02-22 23:34:57,851-interactiveshell.py-[line:113]-DEBUG-ENDMARKER '' (prefix='')
+2022-02-22 23:34:57,851-interactiveshell.py-[line:113]-DEBUG-Stop.
+2022-02-22 23:34:57,852-interactiveshell.py-[line:113]-DEBUG-NAME 'obj' (prefix='')
+2022-02-22 23:34:57,852-interactiveshell.py-[line:113]-DEBUG-DOT '.' (prefix='')
+2022-02-22 23:34:57,852-interactiveshell.py-[line:113]-DEBUG-NAME 'deete' (prefix='')
+2022-02-22 23:34:57,852-interactiveshell.py-[line:113]-DEBUG-LPAR '(' (prefix='')
+2022-02-22 23:34:57,852-interactiveshell.py-[line:113]-DEBUG-STRING '"3"' (prefix='')
+2022-02-22 23:34:57,852-interactiveshell.py-[line:113]-DEBUG-RPAR ')' (prefix='')
+2022-02-22 23:34:57,852-interactiveshell.py-[line:113]-DEBUG-NEWLINE '\n' (prefix='')
+2022-02-22 23:34:57,852-interactiveshell.py-[line:113]-DEBUG-ENDMARKER '' (prefix='')
+2022-02-22 23:34:57,852-interactiveshell.py-[line:113]-DEBUG-Stop.
+2022-02-22 23:35:08,237-interactiveshell.py-[line:113]-DEBUG-NAME 'obj' (prefix='')
+2022-02-22 23:35:08,237-interactiveshell.py-[line:113]-DEBUG-DOT '.' (prefix='')
+2022-02-22 23:35:08,237-interactiveshell.py-[line:113]-DEBUG-NAME 'delete' (prefix='')
+2022-02-22 23:35:08,237-interactiveshell.py-[line:113]-DEBUG-LPAR '(' (prefix='')
+2022-02-22 23:35:08,237-interactiveshell.py-[line:113]-DEBUG-STRING "'3'" (prefix='')
+2022-02-22 23:35:08,237-interactiveshell.py-[line:113]-DEBUG-RPAR ')' (prefix='')
+2022-02-22 23:35:08,237-interactiveshell.py-[line:113]-DEBUG-NEWLINE '\n' (prefix='')
+2022-02-22 23:35:08,237-interactiveshell.py-[line:113]-DEBUG-ENDMARKER '' (prefix='')
+2022-02-22 23:35:08,237-interactiveshell.py-[line:113]-DEBUG-Stop.
+2022-02-22 23:35:08,237-interactiveshell.py-[line:113]-DEBUG-NAME 'obj' (prefix='')
+2022-02-22 23:35:08,237-interactiveshell.py-[line:113]-DEBUG-DOT '.' (prefix='')
+2022-02-22 23:35:08,237-interactiveshell.py-[line:113]-DEBUG-NAME 'delete' (prefix='')
+2022-02-22 23:35:08,237-interactiveshell.py-[line:113]-DEBUG-LPAR '(' (prefix='')
+2022-02-22 23:35:08,237-interactiveshell.py-[line:113]-DEBUG-STRING '"3"' (prefix='')
+2022-02-22 23:35:08,238-interactiveshell.py-[line:113]-DEBUG-RPAR ')' (prefix='')
+2022-02-22 23:35:08,238-interactiveshell.py-[line:113]-DEBUG-NEWLINE '\n' (prefix='')
+2022-02-22 23:35:08,238-interactiveshell.py-[line:113]-DEBUG-ENDMARKER '' (prefix='')
+2022-02-22 23:35:08,238-interactiveshell.py-[line:113]-DEBUG-Stop.
+2022-02-22 23:35:20,558-interactiveshell.py-[line:113]-DEBUG-NAME 'obj' (prefix='')
+2022-02-22 23:35:20,559-interactiveshell.py-[line:113]-DEBUG-EQUAL '=' (prefix=' ')
+2022-02-22 23:35:20,559-interactiveshell.py-[line:113]-DEBUG-NAME 'Studentinfo' (prefix=' ')
+2022-02-22 23:35:20,559-interactiveshell.py-[line:113]-DEBUG-LPAR '(' (prefix='')
+2022-02-22 23:35:20,559-interactiveshell.py-[line:113]-DEBUG-STRING '"students.json"' (prefix='')
+2022-02-22 23:35:20,559-interactiveshell.py-[line:113]-DEBUG-RPAR ')' (prefix='')
+2022-02-22 23:35:20,559-interactiveshell.py-[line:113]-DEBUG-NEWLINE '\n' (prefix='')
+2022-02-22 23:35:20,559-interactiveshell.py-[line:113]-DEBUG-ENDMARKER '' (prefix='')
+2022-02-22 23:35:20,559-interactiveshell.py-[line:113]-DEBUG-Stop.
+2022-02-22 23:35:20,560-interactiveshell.py-[line:113]-DEBUG-NAME 'obj' (prefix='')
+2022-02-22 23:35:20,560-interactiveshell.py-[line:113]-DEBUG-EQUAL '=' (prefix=' ')
+2022-02-22 23:35:20,560-interactiveshell.py-[line:113]-DEBUG-NAME 'Studentinfo' (prefix=' ')
+2022-02-22 23:35:20,560-interactiveshell.py-[line:113]-DEBUG-LPAR '(' (prefix='')
+2022-02-22 23:35:20,560-interactiveshell.py-[line:113]-DEBUG-STRING '"students.json"' (prefix='')
+2022-02-22 23:35:20,560-interactiveshell.py-[line:113]-DEBUG-RPAR ')' (prefix='')
+2022-02-22 23:35:20,560-interactiveshell.py-[line:113]-DEBUG-NEWLINE '\n' (prefix='')
+2022-02-22 23:35:20,560-interactiveshell.py-[line:113]-DEBUG-ENDMARKER '' (prefix='')
+2022-02-22 23:35:20,560-interactiveshell.py-[line:113]-DEBUG-Stop.
+2022-02-22 23:35:40,680-interactiveshell.py-[line:113]-DEBUG-NAME 'obj' (prefix='')
+2022-02-22 23:35:40,680-interactiveshell.py-[line:113]-DEBUG-EQUAL '=' (prefix=' ')
+2022-02-22 23:35:40,680-interactiveshell.py-[line:113]-DEBUG-NAME 'Studentinfo' (prefix=' ')
+2022-02-22 23:35:40,680-interactiveshell.py-[line:113]-DEBUG-LPAR '(' (prefix='')
+2022-02-22 23:35:40,680-interactiveshell.py-[line:113]-DEBUG-STRING '"students.json"' (prefix='')
+2022-02-22 23:35:40,680-interactiveshell.py-[line:113]-DEBUG-COMMA ',' (prefix='')
+2022-02-22 23:35:40,680-interactiveshell.py-[line:113]-DEBUG-STRING "'students.log'" (prefix='')
+2022-02-22 23:35:40,680-interactiveshell.py-[line:113]-DEBUG-RPAR ')' (prefix='')
+2022-02-22 23:35:40,680-interactiveshell.py-[line:113]-DEBUG-NEWLINE '\n' (prefix='')
+2022-02-22 23:35:40,680-interactiveshell.py-[line:113]-DEBUG-ENDMARKER '' (prefix='')
+2022-02-22 23:35:40,680-interactiveshell.py-[line:113]-DEBUG-Stop.
+2022-02-22 23:35:40,681-interactiveshell.py-[line:113]-DEBUG-NAME 'obj' (prefix='')
+2022-02-22 23:35:40,681-interactiveshell.py-[line:113]-DEBUG-EQUAL '=' (prefix=' ')
+2022-02-22 23:35:40,681-interactiveshell.py-[line:113]-DEBUG-NAME 'Studentinfo' (prefix=' ')
+2022-02-22 23:35:40,681-interactiveshell.py-[line:113]-DEBUG-LPAR '(' (prefix='')
+2022-02-22 23:35:40,681-interactiveshell.py-[line:113]-DEBUG-STRING '"students.json"' (prefix='')
+2022-02-22 23:35:40,681-interactiveshell.py-[line:113]-DEBUG-COMMA ',' (prefix='')
+2022-02-22 23:35:40,681-interactiveshell.py-[line:113]-DEBUG-STRING '"students.log"' (prefix=' ')
+2022-02-22 23:35:40,681-interactiveshell.py-[line:113]-DEBUG-RPAR ')' (prefix='')
+2022-02-22 23:35:40,681-interactiveshell.py-[line:113]-DEBUG-NEWLINE '\n' (prefix='')
+2022-02-22 23:35:40,681-interactiveshell.py-[line:113]-DEBUG-ENDMARKER '' (prefix='')
+2022-02-22 23:35:40,681-interactiveshell.py-[line:113]-DEBUG-Stop.
+2022-02-22 23:35:53,646-interactiveshell.py-[line:113]-DEBUG-NAME 'obj' (prefix='')
+2022-02-22 23:35:53,646-interactiveshell.py-[line:113]-DEBUG-DOT '.' (prefix='')
+2022-02-22 23:35:53,647-interactiveshell.py-[line:113]-DEBUG-NAME 'delete' (prefix='')
+2022-02-22 23:35:53,647-interactiveshell.py-[line:113]-DEBUG-LPAR '(' (prefix='')
+2022-02-22 23:35:53,647-interactiveshell.py-[line:113]-DEBUG-STRING '"3"' (prefix='')
+2022-02-22 23:35:53,647-interactiveshell.py-[line:113]-DEBUG-RPAR ')' (prefix='')
+2022-02-22 23:35:53,647-interactiveshell.py-[line:113]-DEBUG-NEWLINE '\n' (prefix='')
+2022-02-22 23:35:53,647-interactiveshell.py-[line:113]-DEBUG-ENDMARKER '' (prefix='')
+2022-02-22 23:35:53,647-interactiveshell.py-[line:113]-DEBUG-Stop.
+2022-02-22 23:35:53,647-interactiveshell.py-[line:113]-DEBUG-NAME 'obj' (prefix='')
+2022-02-22 23:35:53,647-interactiveshell.py-[line:113]-DEBUG-DOT '.' (prefix='')
+2022-02-22 23:35:53,647-interactiveshell.py-[line:113]-DEBUG-NAME 'delete' (prefix='')
+2022-02-22 23:35:53,647-interactiveshell.py-[line:113]-DEBUG-LPAR '(' (prefix='')
+2022-02-22 23:35:53,647-interactiveshell.py-[line:113]-DEBUG-STRING '"3"' (prefix='')
+2022-02-22 23:35:53,647-interactiveshell.py-[line:113]-DEBUG-RPAR ')' (prefix='')
+2022-02-22 23:35:53,647-interactiveshell.py-[line:113]-DEBUG-NEWLINE '\n' (prefix='')
+2022-02-22 23:35:53,647-interactiveshell.py-[line:113]-DEBUG-ENDMARKER '' (prefix='')
+2022-02-22 23:35:53,647-interactiveshell.py-[line:113]-DEBUG-Stop.
+2022-02-22 23:36:57,326-interactiveshell.py-[line:113]-DEBUG-NAME 'exit' (prefix='')
+2022-02-22 23:36:57,326-interactiveshell.py-[line:113]-DEBUG-LPAR '(' (prefix='')
+2022-02-22 23:36:57,326-interactiveshell.py-[line:113]-DEBUG-RPAR ')' (prefix='')
+2022-02-22 23:36:57,326-interactiveshell.py-[line:113]-DEBUG-NEWLINE '\n' (prefix='')
+2022-02-22 23:36:57,326-interactiveshell.py-[line:113]-DEBUG-ENDMARKER '' (prefix='')
+2022-02-22 23:36:57,326-interactiveshell.py-[line:113]-DEBUG-Stop.
+2022-02-22 23:36:57,326-interactiveshell.py-[line:113]-DEBUG-NAME 'exit' (prefix='')
+2022-02-22 23:36:57,326-interactiveshell.py-[line:113]-DEBUG-LPAR '(' (prefix='')
+2022-02-22 23:36:57,327-interactiveshell.py-[line:113]-DEBUG-RPAR ')' (prefix='')
+2022-02-22 23:36:57,327-interactiveshell.py-[line:113]-DEBUG-NEWLINE '\n' (prefix='')
+2022-02-22 23:36:57,327-interactiveshell.py-[line:113]-DEBUG-ENDMARKER '' (prefix='')
+2022-02-22 23:36:57,327-interactiveshell.py-[line:113]-DEBUG-Stop.
+2022-02-22 23:40:00,518-final_student_system.py-[line:129]-INFO-學生dewei 被註冊了

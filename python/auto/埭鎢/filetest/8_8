@@ -1,0 +1,19 @@
+文件複製, 內容覆蓋, 裁減(移動, 重命名), 刪除 ?, 壓縮, 解壓縮
+
+	都必須先獲取origin, target的絕對路徑 -? 
+	-> os.path.join(os.getcwd(), ‘file_name’))
+	可用shutil庫 -複製, 內容覆蓋, 裁減(移動, 重命名), 壓縮, 解壓縮
+Copy -from shutil import copy(orgin, target) -target:file, filefolder
+Cover-from shutil import copyfile(origin, target) -target: file
+Move -from shutil import move(origin, target) -target: file, filefoler, 可以不存在
+	move -裁減文件進文件夾;  rename: target存在, 相當於起新名
+make_archive -from shutil import make_archive(new_name, 後綴, origin) -return 生成的壓縮包地址
+unpack_archive- from shutil import unpack_archive(target, 解壓後的路徑) 
+	刪除 – from os import remove -remove(origin, target)
+import glob
+
+文件夾複製, 裁減, 刪除
+Copy – from shutil import copytree(origin, target) -FileExistError: target不能存在
+Cut – from shutil import move(origin, target) -當target不存在, 屬於重命名
+Remove -from shutil import rmtree(origin, target) -FileNotFoundError: target要存在
+

@@ -1,0 +1,51 @@
+乍一看，寫一個正則表達式來匹配一個數字應該很容易吧？
+
+我們有\d特殊字符來匹配任何數字，我們需要做的就是匹配 小數點，對吧？
+對於簡單的數字，這可能是正確的
+但是在處理科學或財務數字時，您通常必須處理正數和負數、有效數字、指數，甚至不同的表示形式（例如用於分隔數千和數百萬的逗號）。
+
+
+Task	Text
+Match	3.14529
+Match	-255.34
+Match	128
+Match	1.9e10
+Match	123,340.00
+Skip	720p
+
+# regl = \d$  or ^-?\d+(,\d+)*(\.\d+(e\d+)?)?$
+
+Task	    Text	        Capture Groups
+Capture	    415-555-1234	415
+Capture	    650-555-2345	650
+Capture	    (416)555-3456	416
+Capture	    202 555 4567	202
+Capture	    4035555678	    403
+Capture	    1 416 555 9292	416
+
+# regl = (\d{3})  or    1?[\s-]?\(?(\d{3})\)?[\s-]?\d{3}[\s-]?\d{4}
+
+'1?',  '\(?(\d{3})\)?' >> 1 416;  (416)
+the rest of the digits '\d{3}' and '\d{4}' respectively >>>  5555678;  555 4567
+'[\s-]?' to catch the space or dashes between each component.  >>> 555-3456;  555 4567
+
+
+HTML forms -many people use plus addressing for one time use -"name+filter@gmail.com"
+some domains have more than one component, "hellokitty.hk.com" ,  "ilove@hellokitty.hk.com"
+
+
+Task	    Text	                        Capture Groups
+Capture 	tom@hogwarts.com	                tom
+Capture	    tom.riddle@hogwarts.com	            tom.riddle
+Capture	    tom.riddle+regexone@hogwarts.com	tom.riddle
+Capture	    tom@hogwarts.eu.com	                tom
+Capture	    potter@hogwarts.com	                potter
+Capture	    harry@hogwarts.com	                harry
+Capture	    hermione+regexone@hogwarts.com	    hermione
+
+# regl = ^([\w\.]*)
+'''
+要提取每封電子郵件的開頭，我們可以使用一個簡單的表達式^([\w\.]*) 來匹配以字母數字字符（包括句點）開頭的電子郵件。它將匹配到文本中到達“@”或“+”的位置。
+
+同樣，您可能應該使用框架來匹配電子郵件！
+'''

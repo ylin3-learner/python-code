@@ -1,0 +1,93 @@
+進程(處理程序) = 程序執行的載體 = 軟件(遊戲, 腳本)
+進程的糧食 = CPU and 內存(記憶體)
+多進程(分成串型和並行) = 主進程(系統) + 子進程
+      = CPU -> core(核心) -> 進程
+
+
+進程(搶奪CPU及內存) -> 線程(Thread 負責執行程序--收到CPU時間片)
+主進程 -> 主線程 -> 多個線程
+'''
+线程（Thread）也叫轻量级进程，是操作系统能够进行运算调度的最小单位。
+线程自己不拥有系统资源，只拥有一点在运行中必不可少的资源，但它可与同属一个进程的其它线程共享进程所拥有的全部资源。
+一个线程可以创建和撤消另一个线程，同一进程中的多个线程之间可以并发执行，进程之间不能共享内存，但线程之间可以共享内存
+'''
+Conclusion: 多線程比多進程更節省資源, 效率更高, 因為占用較少CPU -->但都可以統稱為並發
+一個CPU多個線程 -並發執行 vs. 多個CPU -並行
+
+壞處: 通過進程模塊執行, 即便有return也無法返回 -> 通過隊列(queue), put()放入, get()取出
+     多個進程同時修改文件可能造成錯誤, 並非數量太多, 而是讀取時間太過相近, 造成錯估內存 -> 需要加鎖
+     數量太多造成內存不足, 內存溢出 -> 多線程取代多進程, 進程池
+
+進程池: 預先建好, 避免創建與關閉的消耗; 避免同時間多個任務搶進程
+       創建進程池: import multiprocessing
+                 multiprocessing.Pool(int(Processcount)) -return pool obj
+                 Pool.apply_async(func, type(args)==tuple) -任務加入進程池(異步), no return
+                 Pool.close() -關閉進程no return
+                 Pool.join() -等待進程池任務結束 no return
+
+進程鎖: 僅針對進程的鎖 - 使任務能夠分開執行
+    from multiprocessing import Manger類
+    manager = Manager() 實例化Manager
+    lock = manager.Lock() Lock對象
+    lock.acquire() 上鎖
+    lock.release() 解鎖
+線程鎖: 僅針對線程的鎖
+
+python提供了多种进程通信的方式，主要Queue和Pipe这两种方式
+Queue用于多个进程间实现通信
+Pipe是两个进程的通信
+
+進程的通信需要隊列: e.g. A -> B
+A進程 -傳送隊列; B進程: 接收隊列
+import multiprocessing模塊
+multiprocessing.Queue類(mac_count隊列數量) --數量理論上無限大, return 隊列隊象
+Queue.put(message) 插入数据到队列中, no return
+Queue.get() 从队列读取并且删除一个元素, return str
+
+
+線程(threading)
+創建: threading.Thread(target, args)
+線程對象的方法: start()
+              join(timeout=None) -阻塞直到當前線程執行結束, timeout為阻塞的時間
+              getName() -獲取線程的名字
+              setName(name) - type(name) == str
+              is_alive()
+              setDaemon(True) -守護線程 => 如腳本已執行完, 但進程池還未結束, 強行終止進程池
+                                          能夠允許子進程、線程持續工作, 在主線程關閉之後
+
+通過線程執行的函數無法獲取返回值
+多個線程同時修改文件可能造成數據錯亂
+線程池的原理 == 進程池
+
+創建: from concurrent
+方法名: futures.ThreadPoolExecutor -創建進程池: tpool = ThreadPoolExecutor類(max_workers), max_workers為數量
+
+submit(target=, args=) -加任務至線程池
+done() -某個線程是否完成任務, return bool
+result() -獲取當前線程執行任務的結果
+
+
+由於GIL鎖的關係, 使得python無法像別的編程語言一樣在不同的core上執行
+只能使用單一CPU -> 為了保證線程安全, 但可以使用pypy解釋器去掉GIL鎖 -不推薦
+                                或者使用多進程 + 多線程
+
+一、
+什么是全局锁 GIL是全局解释器锁，这个GIL并不是python的特性，
+他是在Cpython解释器里引入的一个概念，而 在其他的语言编写的解释器里就没有这个GIL
+
+二、
+全局锁是主要的作用 因为多线程的编程方式，使得线程之间数据的一致性和状态同步难以把控，
+为了解决数据不能同步 的问题，设计了GIL全局解释器锁。
+
+三、
+全局锁是如何发挥作用的 在Cpython解释器中，
+当python代码有一个线程开始访问解释器的时候，GIL会把这个线程给锁上， 此时此刻其他的线程只能干等着，无法对解释器的资源进行访问，
+需要等这个线程分配的时间到 了，这个线程把GIL释放掉，另外的线程才开始跑起来，
+其实这无疑也是一个单线程。这类似于给 线程加锁 threading.Lock().acquire() ，解锁 threading.Lock().release() 一样。
+
+
+
+
+
+
+

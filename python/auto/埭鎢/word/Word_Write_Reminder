@@ -1,0 +1,26 @@
+
+文件生成:
+from docx import Document
+
+都要先建立一個Document_obj
+doc = Document()
+保存資料: doc.save(‘filename.docx’)
+全局樣式:  style = doc.styles[‘..’] - style樣式對象
+斜體: style.italic = True, 粗體 style.bold = True,
+顏色: from docx.shared import RGBColor style.font.color.rgb=RGBColor(),
+大小 from docx.shared import Pt -style.font.size = Pt(20)
+
+-> 對追加的內容才有樣式
+標題:h = doc.add_heading(‘..’, level) 增加: h.add_run(‘…’)
+段落: p = doc.add_paragraph(‘..’) p.add_run()
+	置左, 中, 右: from docx.enum.text import WD_PARAGRAPH_ALIGNMENT.LEFT/CENTER/RIGHT
+圖片: picture = doc.add_picture(origin, width=Inches(), height=Inches())
+	from docx.shared import Inches
+	置左, 中, 右: from docx.enum.text import 	WD_ALIGN_PARAGRAPH. LEFT/CENTER/RIGHT
+	增加: picture.add_run(origin)
+表格: table = doc.add_table(rows列=, cols行=, style=)
+	cell = table.rows[0].cells -表格列對象
+	cell[0].text = 當前列0行的內容
+	cell[1].text = 當前列1行的內容
+	表格樣式: from docx.enum.text import WD_STYLE_TYPE
+分頁: doc.add_page_break()

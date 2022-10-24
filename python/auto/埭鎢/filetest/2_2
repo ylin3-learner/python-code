@@ -1,0 +1,50 @@
+# coding:utf-8
+
+
+# 文件複製 -from shutil import copy(origin[abs, 相對路徑], target) -target可以是文件夾 or 文件
+'''
+os.getcwd() -獲取當前目錄的根路徑
+path = os.path.join(os.getcwd(), 'test1.txt.) -絕對路徑
+target = os.path.join(os.getcwd(), 'test1')
+copy(path, target)
+-> 複製文件進入另一個文件夾
+-> 如果文件複製進另一個文件, 則是添加文件內容
+'''
+# 文件內容覆蓋 -from shutil import copyfile(origin[abs, 相對路徑], target) -target只能是文件
+'''
+copyfile(path, 'abc.txt')
+'''
+# 文件裁減(移動, 重命名) -from shutil import move(origin[abs, 相對路徑], target) -target可以是文件夾 or 文件, 可以不存在
+'''
+move(origin, target)
+-> 移動: 裁減文件進入文件夾
+-> 重命名: 直接將自身起新名 
+'''
+# 文件的刪除 ? -因為shutil不支持單個文件的刪除 from os import remove(target) -target是文件
+# 文件的壓縮, 解壓縮 -from shutil import make_archive(new_name, 壓縮後綴, 希望壓縮的文件或目錄) -return 生成的壓縮包地址
+# from shutil import unpack_archive(要解壓的文件, 解壓後的路徑)
+'''
+make_archive('test1', 'zip', os.path.join(os.getcwd(), 'test1')) 
+path = os.getcwd(os.getcwd(), 'test2')
+unpack_archive('test1.zip', path)
+'''
+import os
+
+from shutil import copy, copyfile, move, make_archive, unpack_archive
+
+path = os.path.join(os.getcwd(), 'test1.txt')
+target = os.path.join(os.getcwd(), 'test1')
+
+copy(path, target)
+
+copyfile(path, 'abc.txt')
+
+#move('abc.txt', 'test1/efg.txt')
+move('abc.txt', 'efg.txt')
+
+make_archive('test1', 'zip', os.path.join(os.getcwd(), 'test1'))
+target = os.path.join(os.getcwd(), 'test2')
+unpack_archive('test1.zip', target)
+
+# os.remove('efg.txt')
+

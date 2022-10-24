@@ -1,0 +1,41 @@
+讀取excel
+package -xlrd --pip install xlrd == 1.2.0 在更高的版本會有系統不兼容問題
+
+import xlrd
+獲取excel對象 -book = xlrd.open_workbook(excel文件) -return book
+獲取工作簿 -book.sheet_by_name() -按照工作簿名稱獲取
+         -book.sheet_by_index() -按照索引獲取
+         -book.sheets() -獲取所有工作簿列表
+讀取工作簿內容 -sheet.nrows() -返回總列數
+             -sheet.ncols() -返回總行數
+             -sheet.get_rows() -返回每列內容列表
+
+生成excel
+package -xlsxwriter --pip install xlsxwriter  import xlsxwriter
+生成excel對象: book = xlsxwriter.Workbook(excel_name) -> 生成excel對象
+生成工作簿對象: sheet = book.add_sheet(工作簿名稱)
+寫內容: sheet.write(rows_index, cols_index, content)
+關閉excel對象: book.close() -釋放內存, 生成excel文件
+
+
+在excel中生成基本的圖表類型
+創建圖表對象: add_chart({type: 樣式})
+    樣式 -area區域樣式表
+        -bar條型
+        -column柱狀
+        -line線條
+        -pie圓餅
+        -doughnut圓環
+        -scatter散點
+        -stock庫存
+        -radar雷達
+定義需要展示的數據: add_series(dict)
+    dict -categories展示的標題: sheet1!$A$1:$A$4
+         -values展示的數據: sheet1!$B$1:$B$4
+         -name表名
+
+定義圖表title: set_title(str)
+
+target: 對excel有最基本的讀寫內容
+
+# 其實在excel操作中, python有許多模塊, 這些相對簡單

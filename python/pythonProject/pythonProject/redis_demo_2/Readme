@@ -1,0 +1,21 @@
+1. 創建redis_db 封裝連接持池, 不管何人都能使用, 不須再創建連接池
+
+2.寫一個腳本引用連接池&redis.py package, 創建連接example_1
+    構建redis對象:con, 傳參connection_pool = pool
+    如果要歸還連接, del con
+
+    操作：在連接對向內使用redis命令, 如set, del, get -> get獲取值需要decode, 否則如b'\xe9\x9b\xb2\xe6\x9e\x97'
+        SET命令用于设置给定 key 的值。如果 key已经存储其他值，SET 就覆写旧值，且无视类型，当通过get命令取值时会得到第二个set后的值
+3. Reading file from .txt input those student' score larger than 85 into Redis' hashtable
+    data = {stu_no, sname, sclass, score1, score2, score3}
+
+4. 模擬投票：300 audience vote 5 person AND order by DESC
+    PUT 5 person's name into tuple -> random.randint() -> 有序集合 + 1
+
+5. 模擬並發搶購案例 -線程池技術 能夠 自動挑選 空閒線程 執行任務
+    https://myapollo.com.tw/zh-tw/python-concurrent-futures/
+    Python 關於平行處理的模組除了 multiprocessing 與 threading 之外，其實還提供 1 個更為簡單易用的 concurrent.futures 可以使用。
+        該模組提供 ThreadPoolExecutor 與 ProcessPoolExecutor 2 個經過封裝的 classes ，讓人方便上手之外，也讓程式看起來更加簡潔。
+        ThreadPoolExecutor 如其名，透過 Thread 的方式建立多個 Executors ，用以執行消化多個任務(tasks)。
+
+    kill_total, kill_num, kill_user, kill_flag

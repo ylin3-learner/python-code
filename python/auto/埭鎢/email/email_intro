@@ -1,0 +1,59 @@
+各種類型的郵件發送方式
+
+發送郵件:
+smtplib 郵件協議與發送模塊
+email 內容定義模塊
+
+定時發送: 在特定的時間自動執行一些任務的功能
+schedule 定時模塊 => pip install schedule
+    usage - schedule.every(count).minutes.do(func, args): 每過多少分鐘執行一次func函數, func要執行的函數, args為func的參數
+            schedule.every().day.at('10:20').do(func, args): 每天的10點20分執行一次func函數, args是參數
+schedule支持的時間: minutes, seconds, day, hour, week
+    startup - schedule.run_pending() 執行: 要放在while中執行, 並且利用時間進行至少1秒的阻塞
+
+普通郵件:
+認識發送郵件流程:
+    log in email
+    write accepter_email
+    write title and content, including 附件
+    sent email
+認識郵件協議
+    smtp 是郵件發送的協議
+    pop3 是郵件接收的協議
+    協議 -規則, 已經被底層封裝好, 直接使用上層工具即可
+smtplib模塊:
+
+smtpObj = smtplib.SMTP( [host [, port [, local_hostname]]] )
+参数说明：
+
+host: SMTP 服务器主机。 你可以指定主机的ip地址或者域名如: runoob.com，这个是可选参数。
+port: 如果你提供了 host 参数, 你需要指定 SMTP 服务使用的端口号，一般情况下 SMTP 端口号为25。
+local_hostname: 如果 SMTP 在你的本机上，你只需要指定服务器地址为 localhost 即可。
+
+    創建協議對象: smtp_obj = smtplib.SMTP()
+    創建鏈結: smtp_obj.connect(smtp服務器地址, 25)
+    登錄驗證: smtp_obj.login(mail_name, mail_password)
+    發送郵件: smtp_obj.sendmail(sender, receivers, message) -receivers可為列表, 內有多人, message是消息加密的字符串
+
+SMTP.sendmail(from_addr, to_addrs, msg[, mail_options, rcpt_options])
+参数说明：
+
+from_addr: 邮件发送者地址。
+to_addrs: 字符串列表，邮件发送地址。
+msg: 发送消息
+这里要注意一下第三个参数，msg 是字符串，表示邮件。我们知道邮件一般由标题，发信人，收件人，邮件内容，附件等构成，
+发送邮件的时候，要注意 msg 的格式。这个格式就是 smtp 协议中定义的格式。
+
+email 包
+    MIMEText(email_content, email_type, encoding_type) -定義郵件發送內容的對象
+        email_type: plain -普通文本類型
+                    html -html類型
+    MIMEMultipart() -定義帶附件的郵件對象
+    Header(各類信息, 編碼格式) -將各類信息定義成對象, 如標題
+        message['From'] = Header[sender] # 發送者
+        title = 'Python SMTP 郵件測試' #　title
+        message['Subject'] = Header(title, 'utf-8')
+發送郵件的避坑總結
+    發送者的郵箱需要開通smtp與pop3的訪問許可
+    獲取密碼要使用授權碼, 而不是真正的密碼
+    開通授權時, 有些郵箱可能會收費

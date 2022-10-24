@@ -1,0 +1,127 @@
+應用於字符串的搜索
+正則表達式的模塊：re
+匹配'針'的規則
+取'針'的大海 --字符串
+
+1. 判斷字符串是否符合規則
+2. 取出制定數據 -> 爬蟲崗位
+
+
+
+import re
+
+str_data = 'hello xiaomu, this is a good day'
+result = re.search('h([a-zA-Z])s', str_data) (regular, data) -regular =>a-z, A-Z, 並在h~s這段區間的字符
+print(result.groups())
+
+但search()只匹配一次  -Return the first match of a pattern in a string
+
+
+import re
+
+str_data = '本期彩票結果是: 10, 20, 1, 5, 7, 21, 12'
+result = re.findall('(\d+, \d+, \d+, \d+, \d+, \d+, \d+)', str_data) => \d匹配數字, +為匹配1-n個數字
+# + 表示 「前面的東西, 可以重複出現 1 次, 2 次, 3 次, ... 任意次」
+print(result)
+
+findall()匹配多次, 獲取所有數據 -Return all matches of a pattern in a string
+
+
+\d -代表的是比對 0~9 的數字，等於是 “[0-9]” 的簡寫版 <-> \D -比對所有非數字的內容，也就是 “[^0-9]” 的簡寫版
+
+\w -包含數字字母與底線, unicode，等同於[A-Za-z0-9_]。 <-> \W -匹配非數字字母及下划線 == [^A-Za-z0-9] -\W是匹配特殊字符，即非字母、非数字、非汉字、非_。会匹配到data中的空格
+
+\s -匹配任何空格字符, 與\n, \t, \r, \v, \f相同 <-> \S -任意非空字符 -可以用來判斷數據的真實長度
+
+\A -起始, 如同startswith == ^ <-> \Z -結尾, 如同endswith == $
+/^A/ 可比對 “Abcd” 中的 “A”，但不可比對 “aAb”
+/A$/ 可比對 “bcdA” 中的 “A”，但不可比對 “aAb”
+
+. -(通配符)匹配任意字符, 除了\n除外
+
+{n,m}是最少匹配n次且最多匹配m次
+ A regular expression may be followed by one of several repetition operators:
+...
+    {n}    The preceding item is matched exactly n times. 確實比對 n 次
+    {n,}   The preceding item is matched n or more times.  至少比對 n 次
+    {,m}   The preceding item is matched at most m times.  This is a GNU extension.
+    {n,m}  The preceding item is matched at least n times, but not more than m times.  比對 n 到 m 次
+...
+
+^是以具体字符开头
+
+$是以具体字符结束
+\b 單詞邊界
+
+x\b中\b匹配的是单词边界，匹配的是单词结束前有x字母即可
+x$匹配字符串中最后一个字符是否是x;
+
+[]是指定要匹配的集合
+
+
+Q: 以字母开头，有数字和下划线组成的长度为9-17的用户名：^[a-zA-Z]\w{8,16}$
+
+这里的{8,16}是对前面的\w做限制，^[a-zA-Z]表示以字母开头不分大小写
+
+
+
+Q: 匹配5-12位qq号：[0-9]\d{4,11} -> [axxxx]~[axxxxxxxxxxx] = a:[0-9], x:[0-9]最少4個, 最多11個
+
+[0-9]表示以数字开头，{4,11}用来限制\d的长度
+A: qq号码是以非0开头的数字，结果是[1-9]\d{4,11} -
+
+
+
+Q: 11位的电话号码：1[3-9]\d{9} -> [1axxxxxxxxx] = a:3~9, x:[0-9]
+
+1表示以1开头，[3-9]表示以3到9的第二位，\d{9}表示满足9个长度的\d
+
+
+# 正則表達式-量詞與组
+
+re1 "|" re2 -匹配規則re1 or re2 => 或的關係, 只要存在就能被捕獲; 且數據只按照str order, not regular order
+^ -start == \A
+$ -end == \Z
+
+0次或多次屬於貪婪模式
+* -匹配0次或多次前面出現的正則表達式 => 所以可以允許匹配不成功, [返回空字符 從頭到尾都是一片空白的那種列]
++ -匹配1次或多次前面出現的正則表達式
+
+? -變成非貪婪模式
+
+[...] -匹配來自字符集的任意單一字符
+[..x-y..] - x-y範圍中的任意單一字符
+[^'...'] -不匹配此字符集中出現的任何一個字符, 包括某一範圍的字符(如果在此字符集中出現)
+\ -將特殊字符無效化
+
+data = 'www.imooc.com'
+print(re.findall('www|imooc|com', data)
+print(re.findall('\w*', data))
+>>> ['dewei', '', 'imooc', '', 'com', '']
+
+data = 'dewei@imooc.com'
+print(re.findall('\w+', data))
+>>> ['dewei', 'imooc', 'com'] - '@'和'.'屬於0次範圍, 不會被匹配出來
+
+data = 'dewei@imooc.com'
+print(re.findall('\w{1,5}', data)
+>>> ['dewei', 'imooc', 'com']
+{N,M} -N,M中間不能有空格
+
+print(re.findall('[^dewei]', data))
+>>> ['@', 'i', 'm', 'o', 'o', 'c', '.', 'c', 'o', 'm']
+
+
+# 組的概念
+() -在匹配規則中獲取指定的數據
+result = re.search('hello {.*} my name is {.*}', data)
+result.groups() -Return the matched string
+>>> ('my', 'dewei')
+
+result.group(1) -- .group() => 從1開始計算
+>>> 'my'
+
+result.group(2) -- .group() =>
+>>> 'dewei'
+
+

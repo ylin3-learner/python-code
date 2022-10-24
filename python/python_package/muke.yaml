@@ -1,0 +1,67 @@
+url:
+  https://www.imooc.com/
+types:
+  -前沿
+  -前端
+  -後端
+  -移動端
+  -雲計算
+  -運維
+  -ui
+python:
+  web:django, flask
+  spider:bs5
+a: 1
+b: 2
+c: [a, b, c]
+虛擬環境:
+  virtualenv -p(選擇python版本的命令) python3.x penv(python的虛擬環境名字, 可隨意起)
+  pyenv
+  調用./penv/bin/active啟動虛擬環境
+    a: active
+    b: deactive
+  1、"virtualenv -p python3.6 env3.6"是创建指定python版本的虚拟环境，因此要先安装指定版本的Python才可以。
+  2、虚拟环境是一个独立的python开发环境，和系统中已安装python环境可以完全隔离，互不相关，相当于多了一个python开发环境
+  windows需要先使用cd进入到penv/Scripts文件夹中，再使用activate激活虚拟环境
+常用內置函數:
+  abs(Number) -返回數字絕對值, e.g.abs(-10)
+  help(object) -打印對象的用法, no return, help(list)
+  enumerate(iterable)枚舉函數 -跌代時紀錄索引, no return, for index, item in enumerate(list)
+  若打印則返回元組類型
+  input(str) -命令行輸入消息, 返回字符串類型, -> input('please input info')
+  isinstance(obj, type) -判斷對象是否為某種類型 -> isinstance('a', str)
+  type(obj) -對象為某種類型, return str
+  vars(instance) -返回實例化的字典類型, return bool
+  dir(object) -返回對象中所有可用的方法和屬性, return list
+  hasattr(obj對象, key屬性) -判斷對象中是否有某種屬性, return bool -> hasattr('a', upper)
+  setattr(obj, key, value) -為實例化對象添加屬性與值, 但內置數據無法設置屬性與值, no return -> setattr(obj, 'run', 'go') => obj.run() = go
+  getattr(obj, key) -通過對象獲取屬性值, 返回任何類型
+  any(Iterable) -判斷內容是否有True值, 只要有一個為True, 則返回True, return bool => 或
+  all(List) - 判斷列表內容是否全為True, return bool, e.g. all(['',123]) => 且
+迭代器:
+  能夠一有資料存入, 就用一點資料; 不需要有完整的預設值 -> 按需加載
+  当用户操作到了或者即将操作到对应的功能时再去加载对应的代码。 
+  由于被分割出去进行按需加载的代码在加载的过程中也需要耗时，
+  你可以预言用户接下来可能会进行的操作，并提前加载好对应的代码，从而让用户感知不到网络加载时间。
+  a:生成迭代器對象:iter(iterable) , iterable:為可遍歷的對象
+  b:使用迭代器: # next(iter_obj) 將迭代器中的數據返回; iter_obj: 迭代器對象
+              # for 循環-yield  --不會報錯
+                              '''
+                              def test():
+                                  for i in range(10):
+                                    yield(i)
+                              res = test()
+                              next(res)
+                              '''
+              # for 循環一行生成迭代器 # res = (i in for i in range(10)) next(res)
+魔法函數:
+  能夠產生迭代器對象
+  map接收一个参数，reduce接收两个参数。map第二个参数是可迭代对象，reduce第二个参数是序列
+  filter(func條件, list需過濾的列表) -對循環根據過濾條件進行過濾
+  map(func, list) -對列表中的每個成員依次執行函數, 將執行結果放到新list中, 返回map對象
+#  ls = [1, 2, 3, 4]
+#  map_test_result = list(map(str, ls))
+#  print(map_test_result) 
+  reduce(func對數據累加的函數, list, initiallizer初始值) -對循環前後兩個數據進行累加或累乘
+  # from functools import reduce
+  # e.g. res = reduce(lambda x, y: x+y, [0, 1, 2]) >> 3

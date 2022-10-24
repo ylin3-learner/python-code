@@ -1,0 +1,2 @@
+pip -i 網址絕對路徑 package==版本指定
+easy_install package

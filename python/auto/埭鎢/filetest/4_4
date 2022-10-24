@@ -1,0 +1,20 @@
+# coding:utf-8
+
+# 文件夾的複製 -from shutil import copytree(origin, target) -FileExistsError: target文件夾不應該存在
+# 文件夾的刪除 -from shutil import rmtree(origin, target) -FileNotFoundError: target應該存在
+# 文件夾的裁剪 -from shutil import move(origin, target) -當target不存在時, 則變成重命名
+from shutil import copytree, rmtree, move
+
+# copytree('test3', 'test4')  # 目标地址不能存在，否则会报错
+
+# rmtree('test4') -'test4' == target
+# 1 target 必须要存在，否则会报错
+# 2 target 中 是否有文件 都可以正常删除，只要目标文件夹存在
+
+# move('test3', 'test4') -'test4' == target
+# 当目标路径不存在，并且和来源目录属于相同路径下，属于重命名
+
+move('test4', 'test2/test1/test3')  # 將'test4'裁減放到'test2'下, 並且重命名為test3
+
+
+
